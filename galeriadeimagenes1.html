@@ -1,0 +1,92 @@
+﻿
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imagenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Galería De Imagenes</h1>
+    <div class="gallery">
+
+        <img src="imagenes/carmen0.jpg" alt="Imagen 1" onclick="openLightbox(this.src)">
+        <img src="imagenes/santoD0.jpg" alt="Imagen 2" onclick="openLightbox(this.src)">
+        
+        <img src="imagenes/merded0.jpg" alt="Imagen 4" onclick="openLightbox(this.src)">
+        <img src="imagenes/cuxtitali0.jpg" alt="Imagen 5" onclick="openLightbox(this.src)">
+        <img src="imagenes/cerrillo.jpg" alt="Imagen 6" onclick="openLightbox(this.src)">
+        
+        <img src="imagenes/santal0.jpg" alt="Imagen 6" onclick="openLightbox(this.src)">
+        <img src="imagenes/guadalupe0.jpg" alt="Imagen 5" onclick="openLightbox(this.src)">
+        <img src="imagenes/santal0.jpg" alt="Imagen 6" onclick="openLightbox(this.src)">
+    </div>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+<p>RED SOCIAL</p>
+<ul>
+  <a href="https://www.instagram.com/html_iglesiascatolicas?igsh=b2pwY3pwbHl6czM1" tarjet="_blank"></li>Instagram</a> 
+  <li><a href="paginaprincipal.html">INICIO</a></li>
+  <li><button class="btn-regresar" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Regresar Arriba</button> </li>
+</ul>
+
+</body>
+</html>
